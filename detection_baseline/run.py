@@ -10,15 +10,16 @@ assert os.path.isfile(pretrained)
 
 from imageai.Detection.Custom import DetectionModelTrainer
 
-#trainer = DetectionModelTrainer()
-#trainer.setModelTypeAsYOLOv3()
+# Train the model
+trainer = DetectionModelTrainer()
+trainer.setModelTypeAsYOLOv3()
 
-#trainer.setDataDirectory(data_directory=corpus)
-#trainer.setTrainConfig(object_names_array=["container"], batch_size=8,
-#                       num_experiments=200, train_from_pretrained_model=pretrained)
-#trainer.trainModel()
+trainer.setDataDirectory(data_directory=corpus)
+trainer.setTrainConfig(object_names_array=["container"], batch_size=8,
+                       num_experiments=200, train_from_pretrained_model=pretrained)
+trainer.trainModel()
 
-
+# Evaluate the model
 from imageai.Detection.Custom import DetectionModelTrainer
 
 trainer = DetectionModelTrainer()
